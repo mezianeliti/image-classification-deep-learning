@@ -1,24 +1,39 @@
-# image-classification-deep-learning
-Image classification using neural networks (MLP) on the Fashion MNIST dataset with preprocessing, training, and performance evaluation.
-## Objective
-Build a neural network model to classify images from the Fashion MNIST dataset.
+# Image Classification with Deep Learning
 
-## Project Description
-This project focuses on implementing a deep learning model (MLP) to perform image classification. It includes data preprocessing, model training, and performance evaluation.
+MLP-based image classification on the **Fashion MNIST** dataset using Keras + TensorFlow.
 
-## Methods
-- Data preprocessing and normalization
-- Neural network (MLP) implementation
-- Model training and evaluation
-- Performance analysis (accuracy)
+## Dataset
 
-## Results
-- Successful classification of Fashion MNIST images
-- Evaluation based on accuracy
+[Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist) — 70,000 grayscale images (28×28px) across 10 clothing categories.
 
-## Tech Stack
-- Python
-- TensorFlow / Keras
-- NumPy
-- Matplotlib
+| Split | Size |
+|-------|------|
+| Train | 55,000 |
+| Val   | 5,000 |
+| Test  | 10,000 |
 
+## Model Architecture
+
+```
+Input(28×28) → Flatten → Dense(300, ReLU) → Dense(100, ReLU) → Dense(10, Softmax)
+```
+
+- Optimizer: Adam
+- Loss: Sparse Categorical Crossentropy
+- Weight init: He Normal
+
+## Key Experiments
+
+- Effect of input normalization (÷255 vs raw vs ÷25000)
+- ReLU vs Sigmoid activations
+- Impact of weight initialization variance
+
+## Stack
+
+- Python · Keras 3 · TensorFlow · NumPy · Matplotlib
+
+## Usage
+
+```bash
+jupyter notebook image_classification.ipynb
+```
